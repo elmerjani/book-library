@@ -93,7 +93,7 @@ img{
 }
 strong{
     text-decoration: underline;
-    color: #D7C3F1;
+    font-size: 18px;
 }
 .author{
     margin-bottom: 8px;
