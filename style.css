@@ -46,6 +46,67 @@ main {
     background-color: var(--main-bg-color);
     
 }
+::backdrop {
+    background-color: #2F2F2F;
+    opacity: 0.8;
+  }
+dialog{
+    
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    border: 1px solid #000;
+    border-radius: 8px;
+    align-self: center;
+    width: min(500px,90%);
+    margin: 0 auto;
+}
+form{
+    
+    
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+}
+.input-description{
+    display: flex;
+    flex-direction: column;
+}
+.actions{
+    
+    display: flex;
+    justify-content: space-around;
+}
+.actions .cancel{
+    padding: 8px 16px;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+}
+.actions .submit{
+    color: var(--main-bg-color);
+    padding: 8px 16px;
+    background-color: var(--text-color);
+    border-radius: 4px;
+}
+form input,
+form textarea{
+    font-size: 16px;
+}
+
+form input[type="text"]{
+    width: 100%;
+    margin-bottom: 8px;
+    height: 32px;
+}
+form button{
+    background-color: red;
+}
+fieldset{
+    
+    border: none;
+}
+  
 
 main .header {
     display: flex;
@@ -135,8 +196,13 @@ strong{
     margin-bottom: 8px ;
    
 }
+.number-of-pages{
+    margin-bottom: 32px ;
+}
 .read{
-    margin-top: 16px ;
+    /* margin-top: 16px ; */
+    position: absolute;
+    bottom: 12px;
     cursor: pointer;
 }
 

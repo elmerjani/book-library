@@ -21,8 +21,49 @@
         </nav>
     </header>
     <main role="main">
+        
+          
         <div class="header">
-            <button>
+            <dialog>
+                
+                <form >
+                    <div class="input-title">
+                        <label for="input-title">Title*</label>
+                        <input type="text" id="input-title" name="input-title" required autofocus>
+                    </div>
+                    <div class="input-author">
+                        <label for="input-author">Author*</label>
+                        <input type="text" id="input-author" name="input-author" required>
+                    </div>
+                    <div class="input-description">
+                        <label for="book-description">Description</label>
+                        <textarea name="book-description" id="book-description" rows="5" ></textarea>
+                    </div>
+                    <div class="input-number-of-pages">
+                        <label for="book-number-of-pages">Number of pages*</label>
+                        <input type="number" name="book-number-of-pages" id="book-number-of-pages" required>
+                    </div>
+                    <fieldset>
+                        <legend>Have you read this Book ?</legend>
+                        <div>
+                            <input type="radio" id="read" name="read" value="read">
+                            <label for="read">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="havent-read" name="read" value="havent-read" checked>
+                            <label for="havent-read">No</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="actions">
+                        <button type="submit" class="submit">Add book</button>
+                        <button type="button" class="cancel">Cancel</button>
+                    </div>
+
+
+                </form>
+            </dialog>
+            <button type="button">
                 <h2 class="add-new-book"> + Add new book</h2>
             </button>
         </div>
