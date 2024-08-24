@@ -5,11 +5,11 @@ function createLibrary(){
     
 
     const handleClick = function (event)  {
-        console.log(books);
+        
         if (event.target.className==='delete'){
             
             books=books.filter((book)=>{
-                console.log(book.isDeleted());
+                
                 
                 
                 return !book.isDeleted();
@@ -18,7 +18,7 @@ function createLibrary(){
             
 
         }
-        console.log(books)
+        
     }
     container.addEventListener('click',handleClick)
     function renderBooks(){

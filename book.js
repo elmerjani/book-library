@@ -5,11 +5,10 @@ function createBook(title,author,description,numberOfPages,read=false){
     const book ={title,author,description,numberOfPages,read};
     let deleted=false;
     let  bookCard ;
-
+    
     
 
     function isDeleted(){
-        console.log(deleted);
         return deleted;
     }
     function deleteBook() {
@@ -18,17 +17,29 @@ function createBook(title,author,description,numberOfPages,read=false){
             bookCard.parentNode.removeChild(bookCard);
         }
     }
+    function toggleReadStatus() {
+        book.read = !book.read; 
+        updateReadIcon();       
+    }
+    function updateReadIcon() {
+        const readIcon = bookCard.querySelector('.read i');
+        if (book.read) {
+            readIcon.className = 'fa-solid fa-bookmark fa-2xl';  
+        } else {
+            readIcon.className = 'fa-regular fa-bookmark fa-2xl'; 
+        }
+    }
 
-    bookCard = createBookCard(book, deleteBook);
+    bookCard = createBookCard(book, deleteBook,toggleReadStatus);
     
 
-    return {book,bookCard,isDeleted,deleteBook};
+    return {book,bookCard,isDeleted,deleteBook,toggleReadStatus };
 
 }
 
 
 
-function createBookCard(book,onDelete) {
+function createBookCard(book,onDelete,onToggleRead) {
     
     const bookCard = document.createElement('div');
     bookCard.className = 'book-card';
@@ -72,6 +83,8 @@ function createBookCard(book,onDelete) {
                                     '<i class="fa-regular fa-bookmark fa-2xl" style="color: #2f2f2f;"></i>';
 
     readDiv.appendChild(readIcon);
+    readDiv.addEventListener('click', onToggleRead);
+
     bookCard.appendChild(readDiv);
 
     return bookCard;
