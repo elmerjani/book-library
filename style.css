@@ -149,6 +149,11 @@ button {
   cursor: pointer;
   color: white;
 }
+h2,
+p {
+  overflow-wrap: break-word;
+  white-space: normal;
+}
 
 .book-card p {
   font-size: 18px;
